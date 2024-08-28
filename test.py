@@ -18,12 +18,15 @@ def test_imgs():
         img.show()
 
 
-# use lspci | grep -i nvidia     in linux 列出所有PCI设备并筛选出GPU信息
-# use  nvidia-smi    in all plantform
+'''use lspci | grep -i nvidia     in linux 列出所有PCI设备并筛选出GPU信息
+use  nvidia-smi    in all plantform
 
-# WDDM 模式：在Windows上，GPU运行在WDDM模式，适用于图形任务。
-# 如果你打算在这台机器上进行深度学习或计算任务，并希望完全利用GPU资源，可能需要切换到TCC模式（仅适用于特定的NVIDIA GPU，如Quadro系列）
-# 如果你的主要需求是提高计算性能，但使用的GPU不支持TCC模式，可以考虑使用双GPU设置，一块用于图形显示（WDDM），另一块专门用于计算任务（TCC）
+WDDM 模式：在Windows上，GPU运行在WDDM模式，适用于图形任务。
+如果你打算在这台机器上进行深度学习或计算任务，并希望完全利用GPU资源，可能需要切换到TCC模式（仅适用于特定的NVIDIA GPU，如Quadro系列）
+如果你的主要需求是提高计算性能，但使用的GPU不支持TCC模式，可以考虑使用双GPU设置，一块用于图形显示（WDDM），另一块专门用于计算任务（TCC）
+
+解决方式 pytorch官网copy命令
+conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia'''
 
 # Number of GPUs per GPU worker
 def count_GPUs_pytorch():
