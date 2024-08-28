@@ -3,6 +3,7 @@ from io import BytesIO
 
 import lmdb
 from PIL import Image
+import torch
 
 
 def test_imgs():
@@ -26,7 +27,6 @@ def test_imgs():
 
 # Number of GPUs per GPU worker
 def count_GPUs_pytorch():
-    import torch
 
     gpu_count = torch.cuda.device_count()
     print(f"Number of GPUs available: {gpu_count}")
@@ -40,4 +40,8 @@ def count_GPUs_tensorflow():
 
 
 if __name__ == "__main__":
+
+    print(torch.__version__)  # 显示 PyTorch 的版本
+    print(torch.version.cuda)  # 显示 PyTorch 编译时使用的 CUDA 版本
     count_GPUs_pytorch()
+    # count_GPUs_tensorflow()
